@@ -12,13 +12,13 @@ public class Exercicio03 {
         int comeco = 0;
         int tam = entrada.length();
 
-        boolean[][] dp = new boolean[tam][tam];
+        boolean[][] pld = new boolean[tam][tam];
         for (int i = 0; i < tam; i++){
-            dp[i][i] = true;
+        	pld[i][i] = true;
         }
         for (int i = 0; i < tam - 1; i++) {
             if(entrada.charAt(i) == entrada.charAt(i + 1)){
-                dp[i][i + 1] = true;
+            	pld[i][i + 1] = true;
                 comeco = i;
                 tamanhoMax = 2;
             }
@@ -26,8 +26,8 @@ public class Exercicio03 {
         for (int j = 3; j <= tam; j++) {
             for (int i = 0; i < tam - j + 1; i++) {
                 int k = i + j - 1;
-                if(entrada.charAt(i) == entrada.charAt(k) && dp[i + 1][k - 1]){
-                	dp[i][j] = true;
+                if(entrada.charAt(i) == entrada.charAt(k) && pld[i + 1][k - 1]){
+                	pld[i][j] = true;
                     comeco = i;
                     tamanhoMax = j;
                 }
