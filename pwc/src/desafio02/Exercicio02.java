@@ -4,16 +4,16 @@ import java.util.LinkedHashSet;
 
 public class Exercicio02 {
 	public static void main(String[] args) {
-	String palavra = "Hello, World!";
+	String entrada = "Hello, World!";
 	
-	LinkedHashSet<Character> letras = new LinkedHashSet<>();
+	LinkedHashSet<Character> inverter = new LinkedHashSet<>();
 	
-	for ( int i = 0; i < palavra.length(); i++) {
-		letras.add(palavra.charAt(i));
+	for ( int i = 0; i < entrada.length(); i++) {
+		inverter.add(entrada.charAt(i));
 	}
 	
 	StringBuilder sb = new StringBuilder();
-	for (Character c : letras) {
+	for (Character c : inverter) {
 		sb.append(c);
 	}
 	System.out.println(sb.toString());
